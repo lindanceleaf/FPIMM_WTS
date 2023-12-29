@@ -22,7 +22,7 @@ def getSheet(path: str, mode: str):
     fmax = freq_threshold[1]
     for i in data:
         i = float(i)
-        if i < fmin or i > fmax: out.write('_ ')
+        if i < fmin or i > fmax: out.write('r ')
         else:
             for j in range(1, len(table)-1):
                 left = (table[j][1] + table[j-1][1]) / 2
