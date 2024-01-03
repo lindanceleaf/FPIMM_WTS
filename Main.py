@@ -10,9 +10,9 @@ def main():
     # get audio
     filename = select_file()  # end with .wav
     if not filename: return
-    print(filename)
+    # print(filename)
     audioPath = f'audio/{filename}'
-    print(audioPath)
+    # print(audioPath)
 
     choose_mode()
     kinds = get_option()
