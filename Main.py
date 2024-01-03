@@ -28,7 +28,7 @@ def main():
         getFreq(splitPath, BPM, sr) # put the file in result/file/kind_Freq.txt
         FreqPath = f'result/{file}/{kind}_Freq.txt'
         getSheet(FreqPath, kind)
-        getLily(f'result/{file}', kind)
+        getLily(f'result/{file}', kind, BPM)
         print(f'{kind} finished')
 
 if __name__ == "__main__":
