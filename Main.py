@@ -4,11 +4,13 @@ from getSheet import getSheet
 from audioInfo import getInfo
 from choose_mode import choose_mode, get_option, kill_window
 from choose_path import select_file
+from getLily import getLily
 
 def main():
     # get audio
-    filename = select_file()
+    filename = select_file()  # end with .wav
     if not filename: return
+    print(filename)
     audioPath = f'audio/{filename}'
     print(audioPath)
 
@@ -26,6 +28,8 @@ def main():
         getFreq(splitPath, BPM, sr) # put the file in result/file/kind_Freq.txt
         FreqPath = f'result/{file}/{kind}_Freq.txt'
         getSheet(FreqPath, kind)
+        getLily(f'result/{file}', kind)
+        print(f'{kind} finished')
 
 if __name__ == "__main__":
     main()

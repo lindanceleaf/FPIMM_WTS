@@ -12,7 +12,7 @@ def getFreq(path: str, BPM: int, sr: int):
     beat_times = np.arange(0, librosa.get_duration(y=y, sr=sr), beat_interval)
 
     pitches, magnitudes = librosa.piptrack(y=y, sr=sr, fmin=20, fmax=8000)
-    print(len(pitches[0]))
+
     for beat_time in beat_times:
         # find the closest frame
         frame_idx = np.argmin(np.abs(librosa.time_to_frames(beat_time, sr=sr) - np.arange(pitches.shape[1])))+int(360/BPM)
